@@ -21,4 +21,4 @@
     - name: install gatsby-cli
       ansible.builtin.package:
         name: gatsby-cli
-        # global: yes
+        state: present
