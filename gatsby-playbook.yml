@@ -1,25 +1,24 @@
----
-name: install gatsby
+- name: install gatsby
 
-hosts: ec2
+  hosts: ec2
 
-become: true # become superuser 
+  become: true # become superuser 
 
-tasks:
-  - name: install dependencies for Node.js
-    ansible.builtin.yum:
-      name: 
-        - gcc-c++
-        - make
-      state: present
+  tasks:
+    - name: install dependencies for Node.js
+      ansible.builtin.yum:
+        name: 
+          - gcc-c++
+          - make
+        state: present
 
-  - name: install Node.js and npm
-    ansible.builtin.yum:
-      name: nodejs
-      state: present
-      enablerepo: epel
+    - name: install Node.js and npm
+      ansible.builtin.yum:
+        name: nodejs
+        state: present
+        enablerepo: epel
 
-  - name: install gatsby-cli
-    ansible.builtin.package:
-      name: gatsby-cli
-      global: yes
+    - name: install gatsby-cli
+      ansible.builtin.package:
+        name: gatsby-cli
+        global: yes
