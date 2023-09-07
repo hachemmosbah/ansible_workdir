@@ -19,6 +19,6 @@
         enablerepo: epel
 
     - name: install gatsby-cli
-      ansible.builtin.package:
+      ansible.builtin.npm:
         name: gatsby-cli
         global: yes
