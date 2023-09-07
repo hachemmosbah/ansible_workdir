@@ -11,11 +11,13 @@ tasks:
         - gcc-c++
         - make
       state: present
+
   - name: install Node.js and npm
     ansible.builtin.yum:
       name: nodejs
       state: present
       enablerepo: epel
+      
   - name: install gatsby-cli
     ansible.builtin.package:
       name: gatsby-cli
