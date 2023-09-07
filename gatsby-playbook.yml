@@ -1,6 +1,7 @@
+---
 name: install gatsby
 
-hosts : ec2
+hosts: ec2
 
 become: true # become superuser 
 
@@ -17,7 +18,7 @@ tasks:
       name: nodejs
       state: present
       enablerepo: epel
-      
+
   - name: install gatsby-cli
     ansible.builtin.package:
       name: gatsby-cli
