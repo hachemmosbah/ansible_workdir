@@ -1,0 +1,17 @@
+- name: install dependencies for Node.js
+  ansible.builtin.yum:
+    name: 
+      - gcc-c++
+      - make
+    state: present
+
+- name: install Node.js and npm
+  ansible.builtin.yum:
+    name: nodejs
+    state: present
+    enablerepo: epel
+
+- name: install gatsby-cli
+  ansible.builtin.npm:
+    name: gatsby-cli
+    global: yes
